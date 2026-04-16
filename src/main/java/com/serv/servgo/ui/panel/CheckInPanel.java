@@ -7,8 +7,6 @@ import com.serv.servgo.ui.UiKit;
 import com.serv.servgo.ui.component.VirtualKeyboardPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Font;
-import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,20 +14,19 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 public class CheckInPanel extends JPanel implements ScreenView {
-    private final KioskController controller;
     private final JTextField plateField = new JTextField();
     private final JLabel messageLabel = new JLabel(" ", SwingConstants.CENTER);
 
     public CheckInPanel(KioskController controller) {
-        this.controller = controller;
         setLayout(new BorderLayout(12, 12));
-        setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 16));
+        setBorder(UiKit.screenPadding());
 
         add(UiKit.title("Mobil Masuk"), BorderLayout.NORTH);
 
-        plateField.setFont(new Font("Monospaced", Font.BOLD, 32));
+        plateField.setFont(UiKit.bigFont());
         plateField.setHorizontalAlignment(SwingConstants.CENTER);
         plateField.setEditable(false);
+        plateField.putClientProperty("FlatLaf.style", "arc:14;minimumHeight:56");
         add(plateField, BorderLayout.CENTER);
 
         JPanel south = new JPanel(new BorderLayout(8, 8));
