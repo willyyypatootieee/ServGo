@@ -7,7 +7,6 @@ import com.serv.servgo.ui.UiKit;
 import java.awt.BorderLayout;
 import java.awt.datatransfer.StringSelection;
 import java.awt.Toolkit;
-import javax.swing.BorderFactory;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -20,7 +19,7 @@ public class ReceiptPanel extends JPanel implements ScreenView {
     public ReceiptPanel(KioskController controller) {
         this.controller = controller;
         setLayout(new BorderLayout(12, 12));
-        setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 16));
+        setBorder(UiKit.screenPadding());
 
         add(UiKit.title("Digital Kwitansi"), BorderLayout.NORTH);
         add(new JScrollPane(receiptArea), BorderLayout.CENTER);
