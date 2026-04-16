@@ -1,9 +1,11 @@
 package com.serv.servgo.app;
 
+import com.formdev.flatlaf.FlatLightLaf;
 import com.serv.servgo.controller.KioskController;
 import com.serv.servgo.model.SessionData;
 import com.serv.servgo.service.QueueService;
 import com.serv.servgo.ui.KioskFrame;
+import com.serv.servgo.ui.UiKit;
 import com.serv.servgo.ui.panel.CheckInPanel;
 import com.serv.servgo.ui.panel.MapsPanel;
 import com.serv.servgo.ui.panel.MonitorPanel;
@@ -21,6 +23,9 @@ public final class KioskApp {
 
     public static void launch() {
         SwingUtilities.invokeLater(() -> {
+            FlatLightLaf.setup();
+            UiKit.applyFlatDefaults();
+
             SessionData session = new SessionData();
             QueueService queueService = new QueueService();
 
