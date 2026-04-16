@@ -6,10 +6,8 @@ import com.serv.servgo.model.ScreenId;
 import com.serv.servgo.ui.ScreenView;
 import com.serv.servgo.ui.UiKit;
 import java.awt.BorderLayout;
-import java.awt.Font;
 import java.text.NumberFormat;
 import java.util.Locale;
-import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -26,11 +24,13 @@ public class PaymentPanel extends JPanel implements ScreenView {
     public PaymentPanel(KioskController controller) {
         this.controller = controller;
         setLayout(new BorderLayout(12, 12));
-        setBorder(BorderFactory.createEmptyBorder(16, 16, 16, 16));
+        setBorder(UiKit.screenPadding());
 
         add(UiKit.title("Pembayaran"), BorderLayout.NORTH);
 
-        summaryArea.setFont(new Font("Monospaced", Font.PLAIN, 18));
+        qris.putClientProperty("FlatLaf.style", "font:+4");
+        cash.putClientProperty("FlatLaf.style", "font:+4");
+        card.putClientProperty("FlatLaf.style", "font:+4");
         add(summaryArea, BorderLayout.CENTER);
 
         JPanel methods = new JPanel(new java.awt.GridLayout(1, 3, 8, 8));
@@ -77,7 +77,7 @@ public class PaymentPanel extends JPanel implements ScreenView {
 
     private String buildSummary() {
         var session = controller.getSession();
-        NumberFormat idr = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+        NumberFormat idr = NumberFormat.getCurrencyInstance(Locale.forLanguageTag("id-ID"));
         String service = session.getServiceType() == null ? "-" : session.getServiceType().label();
         return """
                Payment Summary
