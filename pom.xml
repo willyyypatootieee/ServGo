@@ -9,5 +9,20 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>
         <exec.mainClass>com.serv.servgo.ServGo</exec.mainClass>
+        <flatlaf.version>3.7.1</flatlaf.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>${flatlaf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf-intellij-themes</artifactId>
+            <version>${flatlaf.version}</version>
+        </dependency>
+    </dependencies>
+
 </project>
