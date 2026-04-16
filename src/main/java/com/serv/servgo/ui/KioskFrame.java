@@ -3,6 +3,7 @@ package com.serv.servgo.ui;
 import com.serv.servgo.model.ScreenId;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Dimension;
 import java.util.EnumMap;
 import java.util.Map;
 import javax.swing.JFrame;
@@ -17,6 +18,8 @@ public class KioskFrame extends JFrame {
     public KioskFrame() {
         setTitle("ServGo Rest Area Servis!");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new Dimension(1280, 720));
+        setSize(new Dimension(1280, 720));
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(new BorderLayout());
         setContentPane(root);

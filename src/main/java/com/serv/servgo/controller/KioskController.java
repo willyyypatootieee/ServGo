@@ -52,6 +52,7 @@ public class KioskController {
     public void startSession() {
         stopTimers();
         session.reset();
+        queueService.seedDemoQueues();
         frame.showScreen(ScreenId.CHECK_IN);
     }
 
