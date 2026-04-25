@@ -24,7 +24,7 @@ public class VirtualKeyboardPanel extends JPanel {
         addKey("⌫", this::backspace);
         addKey("Clear", () -> target.setText(""));
         addKey("Space", () -> append(" "));
-        addKey("QR Demo", () -> target.setText("B1234EV"));
+        addKey("Demo Data", () -> target.setText("L1234EV"));
     }
 
     private void addKey(String label, Runnable action) {
