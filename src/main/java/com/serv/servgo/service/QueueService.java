@@ -15,7 +15,6 @@ public class QueueService {
         if (demoSeeded) {
             return;
         }
-
         chargingQueue.set(ThreadLocalRandom.current().nextInt(310, 420));
         lightServiceQueue.set(ThreadLocalRandom.current().nextInt(120, 250));
         demoSeeded = true;
